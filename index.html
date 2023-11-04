@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Proposta</title>
+    <style>
+        .centered-content {
+            display: flex;
+            justify-content: center; /* Centralizar na horizontal */
+            align-items: top; /* Centralizar na vertical */
+            
+        }
+        .centered-table {
+            display: table-row-group;
+        }
+        .table-cell {
+            display: flex;
+            justify-content: center; /* Centralizar na horizontal */
+            align-items: center; /* Centralizar na vertical */
+        
+        
+        .centered-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+        }
+        th,
+        td {
+            border: 0px solid;
+            }
+            table {
+            width: 50%;
+            max-width: 400px;
+            height: 240px;
+            margin: 0 auto;
+            display: block;
+            overflow-x: auto;
+            border-spacing: 0;
+            }
+        tbody {
+            white-space: nowrap;
+            }
+            th,
+            td {
+            padding: 5px 10px;
+            border-top-width: 0;
+            border-left-width: 0;
+            }
+        th {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            vertical-align: bottom;
+            }
+        th:last-child,
+        td:last-child {
+            border-right-width: 0;
+            }
+            tr:last-child td {
+            border-bottom-width: 0;
+            }
+        }   
+    </style>
+</head>
+<body>
+    <div class="centered-content">
+        <div class="centered-table">
+            <div class="table-cell">
+                <table id="EXCEL">
+                    <tr>
+                        <td colspan="4" style="text-align: center; font-size: 35px; font-family: 'Arial Black', Arial, sans-serif;">
+                            <strong style="margin: 0 auto;">SIMULADOR DE PROPOSTA</strong></td>
+                    </tr>    
+                    <tr>
+                        <td id="A2" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; border: 1px solid black; border-radius: 10px; font-size: 14px; font-weight: bold;">DATA:</td>
+                        <td Id="B2" contenteditable="true" style="background-color: white; color: black; text-align: center; border: 1px solid black; border-radius: 10px; font-size: 14px; font-weight: bold;"><input type="date" class="date-input"></td>
+                        <td id="C2" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; border: 1px solid black; border-radius: 10px; text-align: center; font-weight: bold;">VÁLIDO ATÉ A DATA:</td>
+                        <td Id="D2" contenteditable="true" style="background-color: white; color: black; text-align: center; border: 1px solid black; border-radius: 10px; font-size: 14px; font-weight: bold;"><input type="date" class="date-input"></td>               
+                    </tr>
+                    <tr>
+                        <td id="A3" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">IMOBILIÁRIA:</td>
+                        <td id="B3" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">DEIVISON NEGÓCIOS IMOBILIÁRIOS</td>
+                        <td ID="C3" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">CORRETOR(A):</td>
+                        <td id="D3" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">DEIVISON</td>
+                    </tr>
+                    <tr>
+                        <td id="A4" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">EMPREENDIMENTO:</td>
+                        <td id="B4" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">Qual empreendimento?</td>
+                        <td id="C4" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">UNIDADE E TORRE:</td>
+                        <td id="D4" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">0000/TORRE: 001</td>
+                    </tr>
+                    <tr>
+                        <td id="A5" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">CLIENTE 1:</td>
+                        <td id="B5" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">nome do cliente 1</td>
+                        <td id="C5" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">ESTADO CIVIL:</td>
+                        <td id="D5" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><select class="dropdown"><option>solteiro</option><option>casado</option><option>separado</option><option>divorciado</option><option>viúvo</option></select></td>
+                    </tr>
+                    <tr>
+                        <td id="A6" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">DATA DE NASCIMENTO:</td>
+                        <td Id="B6" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                        <td id="C6" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">RENDA:</td>
+                        <td ID="D6" contenteditable="true" style="background-color: white; text-align: center; color: black; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px;" true oninput="formatarReal(this)">R$ 0.000,00</td>
+                    </tr>
+                    <tr>
+                        <td id="A7" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">CLIENTE 2:</td>
+                        <td id="B7" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">nome do cliente 2</td>
+                        <td id="C7" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">ESTADO CIVIL:</td>
+                        <td id="D7" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><select class="dropdown"><option>solteiro</option><option>casado</option><option>separado</option><option>divorciado</option><option>viúvo</option></select></td>
+                    </tr>
+                    <tr>
+                        <td id="A8" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">DATA DE NASCIMENTO:</td>
+                        <td Id="B8" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input">
+                        <td id="C8" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px;">RENDA:</td>
+                        <td ID="D8" contenteditable="true" style="background-color: white; text-align: center; color: black; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px" true oninput="formatarReal(this)"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" style="text-align: center; font-size: 22px; font-family: 'Arial Black', Arial, sans-serif;">
+                            <strong style="margin: 0 auto;">VALORES A SIMULAR</strong>
+                    </tr>
+                    <tr>
+                        <td Id="A10" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">VALOR DE VENDA DO IMÓVEL:</td>
+                        <td Id="B10" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px;" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                        <td Id="C10" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">SUBSÍDIO DA UNIÃO:</td>
+                        <td Id="D10" contenteditable="true" style="background-color: white; text-align: center; color: black; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                    </tr>
+                    <tr>
+                        <td Id="A11" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">FINANCIAMENTO PREVISTO:</td>
+                        <td Id="B11" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                        <td Id="C11" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">SUBSÍDIO CASA PAULISTA:</td>
+                        <td Id="D11" contenteditable="true" style="background-color: white; text-align: center; color: black; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                    </tr>
+                    <tr>
+                        <td ID="A12" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">FGTS:</td>
+                        <td id="B12" contenteditable="true" style="background-color: white; color: black; font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                        <td ID="C12" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">TOTAL DE CRÉDITO:</td>
+                        <td id="D12" style="background-color: white; color: red; font-size: 14px; font-weight: bold; text-align: center; border: 1px solid black; border-radius: 10px"></td>
+                    </tr>
+                    <tr>
+                        <td ID="A13" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px;text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">SALDO A PARCELAR:</td>
+                        <td id="B13" style="background-color: white; color: red; font-size: 14px; font-weight: bold; border: 1px solid black;text-align: center; border-radius: 10px"></td>
+                        <td ID="C13" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 11px; font-style: italic; border: 1px solid black; border-radius: 10px">Ato Mínimo:</td>
+                        <td id="D13" contenteditable="true" style="background-color: white; color: rgb(0, 0, 0); text-align: center; font-size: 11px; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular()">5</td>
+                    </tr>
+                    <tr>
+                        <td id="A15" style="background-color: rgb(255, 255, 255); color: red; text-align: center; font-size: 10px; font-style: italic;">0</td>
+                        <td id="B14" contenteditable="true" style="background-color: rgb(255, 255, 255); color: black; text-align: center; font-size: 14px; font-weight: bold"></td>
+                        <td id="C14" style="background-color: rgb(255, 255, 255); color: red; font-size: 14px; font-weight: bold; text-align: center; border: 1px solid black; border-radius: 10px"></td>
+                        <td id="D14" contenteditable="true" style="background-color: rgb(255, 255, 255); color: red; font-size: 11px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular()">3</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center; font-size: 22px; font-family: 'Arial Black', Arial, sans-serif;">
+                            <strong style="margin: 0 auto;">PARCELAMENTO DO ATO</strong>
+                    </tr>
+                    <tr>
+                        <td Id="A16" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">Ato:</td>
+                        <td Id="B16" contenteditable="true" style="background-color: white; color: black; font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                        <td id="C16" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">DATA:</td>
+                        <td Id="D16" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td id="A17" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">30 dias:</td>
+                        <td id="B17" contenteditable="true" style="background-color: white; color: black; font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                        <td id="C17" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">DATA:</td>
+                        <td Id="D17" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td id="A18" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; font-weight: bold; text-align: center; border: 1px solid black; border-radius: 10px">60 dias:</td>
+                        <td id="B18" contenteditable="true" style="background-color: white; color: black; font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                        <td id="C18" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">DATA:</td>
+                        <td Id="D18" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td id="A19" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">90 dias:</td>
+                        <td id="B19" contenteditable="true" style="background-color: white; color: black; font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                        <td id="C19" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">DATA:</td>
+                        <td Id="D19" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td Id="A20" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">120 dias:</td>
+                        <td id="B20" contenteditable="true" style="background-color: white; color: black; font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" true oninput="formatarReal(this)">R$0.000,00</td>
+                        <td id="C20" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">DATA:</td>
+                        <td Id="D20" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td id="A21" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">150 dias:</td>
+                        <td id="B21" contenteditable="true" style="background-color: white; color: black; font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                        <td id="C21" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">DATA:</td>
+                        <td Id="D21" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td Id="A22" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">TOTAL DO ATO:</td>
+                        <td ID="B22" style="background-color: white; color: red; font-size: 14px; font-weight: bold; border: 1px solid black;text-align: center; border-radius: 10px" oninput="calcular()"></td>
+                    </tr>
+                    <tr>
+                        <td id="A23" contenteditable="true" inputmode="text" style="background-color: rgb(250, 247, 247); color: rgb(240, 105, 105); font-size: 14px; font-weight: bold;" colspan="4">Obs:</td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center; font-size: 22px; font-family: 'Arial Black', Arial, sans-serif; margin: 0 auto;">
+                            <strong>PARCELAS INTERMEDIÁRIAS</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ID="A24" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">Intermediária 1:</td>
+                        <td ID="B24" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"
+                            oninput="formatarReal(this)">R$ 0.000,00</td>
+                        <td ID="C24" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">DATA:</td>
+                        <td Id="D24" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td ID="A25" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">Intermediária 2:</td>
+                        <td ID="B25" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                        <td ID="C25" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">DATA:</td>
+                        <td Id="D25" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td ID="A26" style="background-color: rgb(253, 252, 252); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">Intermediária 3:</td>
+                        <td ID="B26" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                        <td ID="C26" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">DATA:</td>
+                        <td Id="D26" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td ID="A27" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">Intermediária 4:</td>
+                        <td ID="B27" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                        <td ID="C27" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">DATA:</td>
+                        <td Id="D27" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td ID="A28" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">TOTAL DE INTERMEDIÁRIAS:</td>
+                        <td ID="B28" style="background-color: white; color: red; font-size: 14px; font-weight: bold; border: 1px solid black;text-align: center; border-radius: 10px" oninput="calcular()"></td>
+                        <td ID="C28" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center; font-size: 22px; font-family: 'Arial Black', Arial, sans-serif;"><strong style="margin: 0 auto;">PARCELAS PRÉ-CHAVES</strong>
+                    </tr>
+                    <tr>
+                        <td ID="A30" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold;">Número de Parcelas:</td>
+                        <td ID="B30" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold;">Valor das Parcelas:</td>
+                        <td ID="C30" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold;">Total:</td>
+                        <td ID="D30" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold;">Data</td>
+                    </tr>
+                    <tr>
+                        <td id="A31" contenteditable="true" style="background-color: rgb(255, 255, 255); color: red; font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular()">3</td>
+                        <td ID="B31" style="background-color: white; color: red; font-size: 14px; font-weight: bold; border: 1px solid black;text-align: center; border-radius: 10px"></td>
+                        <td ID="C31" contenteditable="true" style="background-color: white; color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">0</td>
+                        <td Id="D31" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input">
+                    </tr>
+                    <tr>
+                        <td ID="A32" contenteditable="true" style="background-color: rgb(255, 255, 255); color: red; font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular()">3</td>
+                        <td ID="B32" contenteditable="true" style="background-color: white; color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular(); formatarReal(this)">R$ 0.000,00</td>
+                        <td ID="C32" contenteditable="true" style="background-color: white; color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">0</td>
+                        <td Id="D32" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td ID="B33" colspan="2" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">TOTAL</td>
+                        <td ID="C33" style="background-color: white; color: red; font-size: 14px; font-weight: bold; border: 1px solid black;text-align: center; border-radius: 10px" oninput="calcular()">0</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center; font-size: 22px; font-family: 'Arial Black', Arial, sans-serif; margin: 0 auto;"><strong>PARCELAS PÓS-CHAVES</strong></td>
+                    </tr>
+                    <tr>
+                        <td id="A35" style="background-color: white; color: red; font-size: 09px; font-weight: bold; border: 1px solid black;text-align: center; border-radius: 10px">R$</td>
+                        <td id="C35" contenteditable="true" style="background-color: white; color: rgb(4, 0, 255); text-align: center; font-size: 11px; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular()">0</td>
+                        <td ID="D35" contenteditable="true" style="background-color: white; color: rgb(255, 0, 0); text-align: center; font-size: 09px; font-weight: bold;">0</td>
+                    </tr>
+                    <tr>
+                        <td ID="A36" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">Número de Parcelas:</td>
+                        <td ID="B36" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">Valor das Parcelas:</td>
+                        <td ID="C36" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">Total:</td>
+                        <td ID="D36" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">Data</td>
+                    </tR>
+                    <tr>
+                        <td ID="A37" contenteditable="true" style="background-color: rgb(255, 255, 255); color: red; font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular()">3</td>
+                        <td ID="B37" contenteditable="true" style="background-color: white; color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">0</td>
+                        <td ID="C37" contenteditable="true" style="background-color: white; color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">0</td>
+                        <td Id="D37" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td id="A38" contenteditable="true" style="background-color: rgb(255, 255, 255); color: red; font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calcular()">3</td>
+                        <td ID="B38" contenteditable="true" style="background-color: white; color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="formatReal(this)">R$ 0.000,00</td>
+                        <td ID="C38" contenteditable="true" style="background-color: white; color: rgb(0, 0, 0); font-size: 14px; text-align: center; font-weight: bold; border: 1px solid black; border-radius: 10px">0</td>
+                        <td Id="D38" contenteditable="true" style="background-color: white; color: black; text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px"><input type="date" class="date-input"></td>
+                    </tr>
+                    <tr>
+                        <td ID="A39" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px">TOTAL</td>
+                        <td ID="B39" contenteditable="true" style="background-color: white; color: rgb(55, 0, 255); text-align: center; font-size: 14px; font-weight: bold; border: 1px solid black; border-radius: 10px" oninput="calculator()">R$ 0.000,00</td>
+                        <td ID="C39" style="background-color: white; color: red; font-size: 14px; font-weight: bold; border: 1px solid black;text-align: center; border-radius: 10px">R$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center; font-size: 14px; font-style: italic;">Veja que é muito simples incluir parcelamento Pós-chaves, você tem duas opções:</td>
+                    <tr>
+                        <td colspan="4" style="text-align: center; font-size: 14px; font-style: italic;">1ª opção: *altere o valor da porcentagem no local do símbolo % (porcentagem) em azul acima.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center; font-size: 14px; font-style: italic;">2ª opção: *coloque o valor total no local onde há cifrão de real em azul.</td>
+                    </tr>
+                    <tr>                
+                        <td colspan="4" style="text-align: center; font-size: 14px; font-style: italic;">Obs.: nunca use as duas opções escolha apenas uma ou a outra!</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center; font-size: 14px; font-style: italic;">Pronto, agora é só você definir a quantidade de parcelas conforme se cliente pode pagar!</td>
+                    </tr>                    
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
